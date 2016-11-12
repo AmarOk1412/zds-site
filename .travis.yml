@@ -46,6 +46,8 @@ cache:
     - $HOME/bin
 
 before_script:
+  # Connect to saucelabs
+  - sh sauce_connect_setup.sh
   # MySQL config
   - sudo sed -i'' 's/\[client\]/\[client\]\ndefault-character-set=utf8mb4/' /etc/mysql/my.cnf
   - sudo sed -i'' 's/\[mysql\]/\[mysql\]\ndefault-character-set=utf8mb4/' /etc/mysql/my.cnf
